@@ -12,9 +12,9 @@ class TurmaController {
     }
 
     static async selecionaUmaTurma(req, res) {
-        const id = req.params
+        const { id } = req.params
         try {
-            const umaTurma = database.Turmas.findOne({
+            const umaTurma = await database.Turmas.findOne({
                 where: {
                     id: Number(id)
                 }
