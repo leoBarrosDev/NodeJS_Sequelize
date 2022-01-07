@@ -11,9 +11,9 @@ class NivelController {
     }
 
     static async selecionaUmNivel(req, res) {
-        const id = req.params
+        const { id } = req.params
         try {
-            const umNivel = database.Niveis.findOne({
+            const umNivel = await database.Niveis.findOne({
                 where: {
                     id: Number(id)
                 }
